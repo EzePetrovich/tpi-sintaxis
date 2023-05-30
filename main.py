@@ -1,9 +1,11 @@
 from scanner import Scanner
 
 def main():
-    s = Scanner('not true or false')
+    s = Scanner('<article></article>')
     tokens = s.scanAll()
-    print(tokens)
-
+    print("Se encontraron los siguientes tokens:")
+    for t in tokens:
+        msg = f'-> {t}'
+        print(msg);
 if __name__ == '__main__':
     main()

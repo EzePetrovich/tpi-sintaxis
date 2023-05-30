@@ -2,13 +2,16 @@ from dataclasses import dataclass
 from enum import Enum
 
 class TokenType(Enum):
-    TRUE = 1
-    FALSE = 2
-    AND = 3
-    OR = 4
-    NOT = 5
-    LPAREN = 6
-    RPAREN = 7
+    DOCTYPE = '<!DOCTYPE article>' # if <!DOCTYPE !endsWith('>')
+    ARTICLE_O = '<article>'
+    ARTICLE_C = '</article>'
+    INFO_O = '<info>'
+    INFO_C = '</info>'
+    TITLE_O = '<title>'
+    TITLE_C = '</title>'
+    SIMP_SECTION_O = '<s>'
+    LABRACKET = '<'
+    RABRACKET = '>'
     
     def __str__(self) -> str:
         return self.name
