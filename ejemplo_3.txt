@@ -1,0 +1,13 @@
+<!DOCTYPE article>
+<article>
+<info>
+<title>Trabajo Práctico Integrador: Diseño e implementación de Lexer y Parser</title>
+<abstract>
+<title>Ejemplo TPI</title>
+<para>Aceptor DocBook/XML y Conversor a HTML</para>
+<simpara>Simple Parrafo: Aceptor DocBook/XML y Conversor a
+HTML</simpara>
+</abstract>
+<xlink:href:="asdasdasd">
+<videodata fileret="URasdasdaI"/>
+</article>
