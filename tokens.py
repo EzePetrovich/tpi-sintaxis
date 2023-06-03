@@ -2,7 +2,6 @@ from dataclasses import dataclass
 from enum import Enum
 
 class TokenWithUri:
-    
     def __init__(self, init_name, end_name):
         self.init_name = init_name
         self.end_name = end_name
@@ -80,6 +79,7 @@ class TokenType(Enum):
     TFOOT_CLOSE = '</tfoot>'
     TBODY_OPEN = '<tbody>'
     TBODY_CLOSE = '</tbody>'
+    TEXT = '<text>'
     IMAGEDATA = TokenWithUri('<imagedata fileret="', '"/>') 
     VIDEODATA = TokenWithUri('<videodata fileret="', '"/>')
     LINK = TokenWithUri('<xlink:href:="', '">')
