@@ -1,0 +1,15 @@
+<article 
+
+Token de apertura
+
+'<' '>'
+
+Si falta uno o no se encuentra el token
+
+Token de cierre
+
+'<' '>' '/'
+
+Si falta uno o no se encuentra el token
+
+ERROR: ...

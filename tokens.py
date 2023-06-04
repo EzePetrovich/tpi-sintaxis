@@ -4,13 +4,13 @@ from enum import Enum
 class TokenWithUri:
     def __init__(self, init_name, end_name):
         self.init_name = init_name
-        self.end_name = end_name
+        self.end_name = end_name if end_name else '"/>'
         
     def completeToken(self):
         return(self.init_name + self.end_name)
 
 class TokenType(Enum):
-    DOCTYPE = '<!DOCTYPE article>'
+    DOCTYPE = '<!doctype article>'
     ARTICLE_OPEN = '<article>'
     ARTICLE_CLOSE = '</article>'
     INFO_OPEN = '<info>'
@@ -80,8 +80,8 @@ class TokenType(Enum):
     TBODY_OPEN = '<tbody>'
     TBODY_CLOSE = '</tbody>'
     TEXT = '<text>'
-    IMAGEDATA = TokenWithUri('<imagedata fileret="', '"/>') 
-    VIDEODATA = TokenWithUri('<videodata fileret="', '"/>')
+    IMAGEDATA = TokenWithUri('<imagedata fileret="', None) 
+    VIDEODATA = TokenWithUri('<videodata fileret="', None)
     LINK = TokenWithUri('<xlink:href:="', '">')
     
     def __str__(self) -> str:

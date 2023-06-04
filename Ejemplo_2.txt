@@ -1,4 +1,3 @@
-<!DOCTYPE article>
 <article>
 <info>
 <title>Trabajo Práctico Integrador: Diseño e implementación de Lexer y Parser</title>

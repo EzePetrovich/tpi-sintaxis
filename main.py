@@ -80,10 +80,6 @@ def readFromTxt() -> str:
     tokens = s.scanAll()
     
     return showTokens(tokens, name_file)
-    
-    
-     
-    
 
 def inputUserTxt() -> str:
     os.system('cls')
@@ -98,10 +94,27 @@ def showTokens(tokens, name_file):
         if(name_file):
             print(f'Archivo cargado: {name_file}')
         if tokens:
-            print(f"\nSe encontraron los siguientes tokens: \n")
+            print(f'\n{Fore.LIGHTGREEN_EX}Tokens \n{Fore.LIGHTYELLOW_EX}Lexema\n{Fore.RED}Errores')
+            print(f"\nTokens encontrados: \n")
+            
+            digits_to_space = len(str(len(tokens)))
+            
+            for dicts in tokens:
                 
-            for t in tokens:
-                print(f'{Fore.LIGHTGREEN_EX}{t.token_type}{Fore.WHITE} » {Fore.LIGHTYELLOW_EX}{t.lexeme}')
+                n_spacing = digits_to_space - len(str(dicts["line"]))
+                spacing = ' ' * n_spacing
+                line_column = spacing + str(dicts["line"]) + '│ '
+                
+                print(f'{line_column}', end='')
+                dict_array_length = len(dicts["tokens"])
+                for token in dicts["tokens"]:
+                    if(not isinstance(token, str)):
+                        print(f'{Fore.LIGHTGREEN_EX}{token.token_type} {Fore.WHITE}» {Fore.LIGHTYELLOW_EX}{token.lexeme}', end= (f'{Fore.WHITE}|' if dict_array_length > 1 else ''))
+                        dict_array_length -= 1
+                    else:
+                        print(f'{Fore.RED}{token}', end='')
+                else:
+                    print()
                 
             answer = input('\n¿Desea realizar otra operación? [s/n]: ')
             if answer == 's' or answer == 'n':
