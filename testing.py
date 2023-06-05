@@ -1,0 +1,3 @@
+letter = ''
+
+print(len(letter))

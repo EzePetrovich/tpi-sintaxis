@@ -29,11 +29,13 @@ class Scanner:
         while self.curr is not None:
             if self.curr in ('\n', '\t'):
                 if self.curr == '\n':
+                    if(len(content) > 0):
+                        content = ''
+                        return Token(TokenType.TEXT, '<text>')
                     self.line += 1
                     self.lines_tokens.append(dict(tokens = [], line = self.line))
                 self.advance()
             else:
-                # <article <asdñlkz>
                 if(self.curr == '<'):
                     if(len(content) > 0):
                         content = ''
@@ -50,7 +52,8 @@ class Scanner:
                             else:
                                 return word
                 if self.curr != None and self.curr != '<':
-                    content += self.curr
+                    if(self.curr != '>'):
+                        content += self.curr
                     self.advance()
                 #else:
                     #if(self.curr == '>'):
@@ -61,6 +64,9 @@ class Scanner:
                     # content = self.curr
                     # if content in ['<', '>']:
                     #pass
+        if(self.curr == None and len(content) > 0):
+            content = ''
+            return Token(TokenType.TEXT, '<text>')
         return None
     
     def scanAll(self):

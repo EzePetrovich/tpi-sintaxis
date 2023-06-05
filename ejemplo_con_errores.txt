@@ -80,7 +80,7 @@ generar. <emphasis>Domingo 23 de Abril de 2023</emphasis></para>
 los tokens del lenguaje. <emphasis>Domingo 28 de Mayo de
 2023</emphasis></para>
 </listitem>
-<listitem>
+<listitem
 <para>3er entrega final: Presentación de trabajo completo. Lexer y
 parser, incluye la presentación del trabajo ante la clase con una
 exposición de no más de 20 minutos.- <emphasis>Domingo 2 de Julio de

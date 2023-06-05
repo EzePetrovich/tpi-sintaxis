@@ -1,19 +1,18 @@
 import os
 from os import listdir
 from os.path import isfile, join
-from colorama import Fore
-from colorama import init
 from scanner import Scanner
+
+RED = '\033[31m'
+GREEN = '\033[92m'
+YELLOW = '\033[93m'
+WHITE = '\033[37m'
+MAGENTA = '\033[35m'
+CYAN = '\033[36m'
 
 DIRECTORY = os.getcwd()
 
-'''
-    1. Must -> Encontrar error en línea | Should -> Que muestre el error
-    2. Detectar el contenido de las etiquetas como -> <text>
-'''
-
 def main():
-    init(autoreset=True)
     menu()
 
 def menu():
@@ -68,10 +67,10 @@ def readFromTxt() -> str:
             if(input_user > 0 and input_user <= cont):
                 break
             else:
-                print(f'\n{Fore.RED}ERROR: {Fore.WHITE}la opcion ingresada no es valida.')
+                print(f'\n{RED}ERROR: {WHITE}la opcion ingresada no es valida.')
                 input('\nPresione intro para seguir...')
         except:
-            print(f'\n{Fore.RED}ERROR: {Fore.WHITE}solo puede ingresar numeros.')
+            print(f'\n{RED}ERROR: {WHITE}solo puede ingresar numeros.')
             input('\nPresione intro para seguir...')
     
     name_file = only_txt[int(input_user) - 1]
@@ -94,7 +93,7 @@ def showTokens(tokens, name_file):
         if(name_file):
             print(f'Archivo cargado: {name_file}')
         if tokens:
-            print(f'\n{Fore.LIGHTGREEN_EX}Tokens \n{Fore.LIGHTYELLOW_EX}Lexema\n{Fore.RED}Errores')
+            print(f'\n{GREEN}Tokens \n{YELLOW}Lexema\n{RED}Errores{WHITE}')
             print(f"\nTokens encontrados: \n")
             
             digits_to_space = len(str(len(tokens)))
@@ -109,10 +108,10 @@ def showTokens(tokens, name_file):
                 dict_array_length = len(dicts["tokens"])
                 for token in dicts["tokens"]:
                     if(not isinstance(token, str)):
-                        print(f'{Fore.LIGHTGREEN_EX}{token.token_type} {Fore.WHITE}» {Fore.LIGHTYELLOW_EX}{token.lexeme}', end= (f'{Fore.WHITE}|' if dict_array_length > 1 else ''))
+                        print(f'{GREEN}{token.token_type} {WHITE}» {YELLOW}{token.lexeme}{WHITE}', end= (f'{WHITE}|' if dict_array_length > 1 else ''))
                         dict_array_length -= 1
                     else:
-                        print(f'{Fore.RED}{token}', end='')
+                        print(f'{RED}{token}', end=f'{WHITE}')
                 else:
                     print()
                 
@@ -120,16 +119,16 @@ def showTokens(tokens, name_file):
             if answer == 's' or answer == 'n':
                 return answer
             else:
-                print(f'\n{Fore.RED}ERROR: {Fore.WHITE}la opción ingresada no es valida.')
+                print(f'\n{RED}ERROR: {WHITE}la opción ingresada no es valida.')
                 input('\nPresione intro para seguir...')
 
         else:
-            print(f'{Fore.RED}No se hallaron tokens.')
+            print(f'{RED}No se hallaron tokens.{WHITE}')
             answer = input('\n¿Desea realizar otra operación? [s/n]: ')
             if answer == 's' or answer == 'n':
                 return answer
             else:
-                print(f'\n{Fore.RED}ERROR: {Fore.WHITE}la opción ingresada no es valida.')
+                print(f'\n{RED}ERROR: {WHITE}la opción ingresada no es valida.')
                 input('\nPresione intro para seguir...')
             
 if __name__ == '__main__':
