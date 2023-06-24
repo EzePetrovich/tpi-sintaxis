@@ -6,7 +6,7 @@
 <para>Aceptor DocBook/XML y Conversor a HTML</para>
 <simpara>Simple Parrafo: Aceptor DocBook/XML y Conversor a
 HTML</simpara>
-</abstract>
+</article>
 <author>
 <personname>
 <firstname>Rodrrgo</firstname>
