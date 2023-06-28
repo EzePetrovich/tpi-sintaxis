@@ -3,8 +3,5 @@ class TokenWithUri:
         self.init_name = init_name
         self.end_name = end_name if end_name else '"/>'
 
-    def completeToken(self):
-        return self.init_name + self.end_name
-
-
-protocols = ["http", "https", "ftp", "ftps"]
+    def completeToken(self, url):
+        return self.init_name + self.end_name + url if url != None else ""

@@ -29,22 +29,22 @@ def menu():
         print("1) Ingresar por teclado.")
         print("2) Leer un archivo.")
         print("0) Salir")
-        try:
-            input_user = int(input("\n> Ingrese una opcion: "))
-            if input_user == 1:
-                answer = inputUserTxt()
-            elif input_user == 2:
-                answer = readFromTxt()
-            elif input_user == 0:
-                break
-            else:
-                print("ERROR: la opcion ingresada no es valida")
-                input("\nPresione intro para seguir...")
-            if answer == "n":
-                break
-        except:
-            print("ERROR: solo puede ingresar numeros.")
+        # try:
+        input_user = int(input("\n> Ingrese una opcion: "))
+        if input_user == 1:
+            answer = inputUserTxt()
+        elif input_user == 2:
+            answer = readFromTxt()
+        elif input_user == 0:
+            break
+        else:
+            print("ERROR: la opcion ingresada no es valida")
             input("\nPresione intro para seguir...")
+        if answer == "n":
+            break
+        # except:
+        #    print("ERROR: solo puede ingresar numeros.")
+        #    input("\nPresione intro para seguir...")
 
 
 def readFromTxt() -> str:
@@ -88,8 +88,6 @@ def inputUserTxt() -> str:
     os.system("cls")
     s = Scanner(input("> Ingrese el texto: "))
     tokens = s.scanAll()
-    print(s.URL)
-    input()
 
     return showTokens(tokens, None)
 

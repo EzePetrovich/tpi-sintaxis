@@ -7,8 +7,8 @@ class TokenWithUri:
         self.init_name = init_name
         self.end_name = end_name if end_name else '"/>'
 
-    def completeToken(self):
-        return self.init_name + self.end_name
+    def completeToken(self, url):
+        return self.init_name + (url if url != None else "") + self.end_name
 
 
 class TokenType(Enum):

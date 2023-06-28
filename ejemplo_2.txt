@@ -8,7 +8,7 @@
 <simpara>Simple Parrafo: Aceptor DocBook/XML y Conversor a
 HTML</simpara>
 </abstract>
-<xlink:href:="asdasdasd">
-<videodata fileref="URasdasdaI"/>
-<imagedata fileref="URasdasdaI"/>
+<xlink:href:="https://Google">
+<videodata fileref="ftps://"/>
+<imagedata fileref="Google"/>
 </article>
