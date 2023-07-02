@@ -1,7 +1,13 @@
+import re
 from tokens import Token, TokenType, TokenWithUri
 
 PROTOCOLS = ["http://", "https://", "ftp://", "ftps://"]
 CHARS_OK = ["#", "-", "_", ":", "&", "?", "=", "/", "."]
+
+# EXPRESIONES REGULARES
+R_CHARS_OK = f"[#|-|_|:|&|?|=|/|.]"
+R_PROTOCOLS = f"(http|https|ftp|ftps)://"
+R_DOMAIN = f"([a-z]|[A-Z]|[0-9])+([.]|[a-z]|[A-Z]|[0-9])*"
 
 
 class ScannerURL:
@@ -24,27 +30,22 @@ class ScannerURL:
                 self.advance()
             else:
                 self.isValid = False
-                # print(f"La URL posee un caracter no válido -> {self.curr}")
+                break
 
     def validateUrl(self):
-        match = False
-        url_copy = self.url
-        protocol_matched = ""
-        for protocol in PROTOCOLS:
-            match = match or (protocol in self.url)
-            if match:
-                protocol_matched = protocol
-                break
-        self.isValid = match
-        # if not match:
-        # print("La URL no tiene protocolo.")
-        url_copy = url_copy.replace(protocol_matched, "")
-        self.isValid = self.isValid and len(url_copy) > 0
-        # print("La URL no tiene dominio.")
+        findURL = re.search(R_PROTOCOLS, self.url)
+        if findURL:
+            copy_url = self.url.replace(findURL.group(0), "")
+            findURL = re.search(R_DOMAIN, copy_url)
+            if findURL is None:
+                self.isValid = False
+        else:
+            self.isValid = False
 
     def process(self):
         self.okChars()
-        self.validateUrl()
+        if self.isValid:
+            self.validateUrl()
 
 
 class Scanner:

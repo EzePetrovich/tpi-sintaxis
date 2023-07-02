@@ -2,6 +2,7 @@ import os
 from os import listdir
 from os.path import isfile, join
 from tokens_scanner import Scanner
+from tokens import TokenWithUri, TokenType
 
 RED = "\033[31m"
 GREEN = "\033[92m"
