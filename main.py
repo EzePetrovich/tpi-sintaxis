@@ -1,7 +1,7 @@
 import os
 from os import listdir
 from os.path import isfile, join
-from scanner import Scanner
+from tokens_scanner import Scanner
 
 RED = "\033[31m"
 GREEN = "\033[92m"
@@ -20,6 +20,7 @@ def main():
 def menu():
     os.system("cls")
     input_user = None
+    answer = ""
 
     while True:
         os.system("cls")
@@ -38,11 +39,11 @@ def menu():
             elif input_user == 0:
                 break
             else:
-                print("ERROR: la opcion ingresada no es valida")
+                print(f"{RED}ERROR: {WHITE}la opcion ingresada no es valida")
                 input("\nPresione intro para seguir...")
             if answer == "n":
                 break
-        except:
+        except ValueError:
             print("ERROR: solo puede ingresar numeros.")
             input("\nPresione intro para seguir...")
 
@@ -53,7 +54,7 @@ def readFromTxt() -> str:
     only_txt = []
 
     for f in list_files:
-        if f.endswith(".txt"):
+        if f.endswith(".txt") or f.endswith(".xml"):
             only_txt.append(f)
 
     while True:
@@ -72,7 +73,7 @@ def readFromTxt() -> str:
             else:
                 print(f"\n{RED}ERROR: {WHITE}la opcion ingresada no es valida.")
                 input("\nPresione intro para seguir...")
-        except:
+        except ValueError:
             print(f"\n{RED}ERROR: {WHITE}solo puede ingresar numeros.")
             input("\nPresione intro para seguir...")
 

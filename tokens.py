@@ -85,7 +85,6 @@ class TokenType(Enum):
     IMAGEDATA = TokenWithUri('<imagedata fileref="', None)
     VIDEODATA = TokenWithUri('<videodata fileref="', None)
     LINK = TokenWithUri('<xlink:href:="', '">')
-    URL = "protocolo://dominio:puerto?/ruta?#fragmento?"  # PROTOCOL '://' DOMAIN (':' PORT)? ('/' ROUTE)? ('#' FRAGMENT)?
 
     # val_chars = ['#', '-', '_', ':', '&', '?', '=']
     # if URL.isdigit() or URL.isalpha() or not URL in val_chars -> Es válido
