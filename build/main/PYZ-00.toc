@@ -255,10 +255,6 @@
   ('random',
    'C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\random.py',
    'PYMODULE'),
-  ('scanner',
-   'C:\\Users\\Usuario\\Desktop\\UTN\\2023\\Sintaxis\\TPI\\Lexer\\Lexer '
-   'Git\\scanner.py',
-   'PYMODULE'),
   ('selectors',
    'C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\selectors.py',
    'PYMODULE'),
@@ -304,6 +300,10 @@
   ('tokens',
    'C:\\Users\\Usuario\\Desktop\\UTN\\2023\\Sintaxis\\TPI\\Lexer\\Lexer '
    'Git\\tokens.py',
+   'PYMODULE'),
+  ('tokens_scanner',
+   'C:\\Users\\Usuario\\Desktop\\UTN\\2023\\Sintaxis\\TPI\\Lexer\\Lexer '
+   'Git\\tokens_scanner.py',
    'PYMODULE'),
   ('tracemalloc',
    'C:\\Users\\Usuario\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\tracemalloc.py',
