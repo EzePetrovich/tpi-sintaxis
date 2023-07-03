@@ -82,6 +82,12 @@ class TokenType(Enum):
     TFOOT_CLOSE = "</tfoot>"
     TBODY_OPEN = "<tbody>"
     TBODY_CLOSE = "</tbody>"
+    ENTRYBL_OPEN = "<entrybl>"
+    ENTRYBL_CLOSE = "</entrybl>"
+    ENTRY_OPEN = "<entry>"
+    ENTRY_CLOSE = "</entry>"
+    ROW_OPEN = "<row>"
+    ROW_CLOSE = "</row>"
     TEXT = "<text>"
     IMAGEDATA = TokenWithUri('<imagedata fileref="', None)
     VIDEODATA = TokenWithUri('<videodata fileref="', None)
