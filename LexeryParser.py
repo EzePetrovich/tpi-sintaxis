@@ -440,7 +440,7 @@ ventana_principal.title("Analizador Léxico-Sintáctico")
 
 # Texto
 Label_text = Entry(ventana)
-Label_text = Label(text="Analizador RSS")
+Label_text = Label(text="Analizador Sintáctico")
 Label_text.config(
     font=("Helvetica 25 bold"), background="thistle4", foreground="gray10"
 )

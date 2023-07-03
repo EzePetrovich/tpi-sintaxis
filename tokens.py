@@ -93,20 +93,6 @@ class TokenType(Enum):
     VIDEODATA = TokenWithUri('<videodata fileref="', None)
     LINK = TokenWithUri('<xlink:href:="', '">')
 
-    # val_chars = ['#', '-', '_', ':', '&', '?', '=']
-    # if URL.isdigit() or URL.isalpha() or not URL in val_chars -> Es válido
-
-    """
-    1. Tomar el contenido del href o fileref como una palabra.
-    2. Buscar los siguientes tokens: [PROTOCOL, DOMAIN, PORT, ROUTE, FRAGMENT] y apilarlos en un array
-    3. Verificar dentro de un método que el orden de apilamiento de los tokens sea el siguiente:
-        a. PROTOCOL (Requerido) ['http', 'https', 'ftp', 'ftps']
-        b. DOMAIN (Requerido)
-        c. PORT (No requerido)
-        d. ROUTE (No requerido)
-        e. FRAGMENT (No requerido)
-    """
-
     def __str__(self) -> str:
         return self.name
 
